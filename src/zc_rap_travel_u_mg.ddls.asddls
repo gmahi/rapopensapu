@@ -1,6 +1,7 @@
 @EndUserText.label: 'Travel Data'
 @AccessControl.authorizationCheck: #CHECK
 @Search.searchable: true
+@Metadata.allowExtensions: true
 define root view entity ZC_RAP_TRAVEL_U_MG
   as projection on ZI_RAP_TRAVEL_U_MG
 {

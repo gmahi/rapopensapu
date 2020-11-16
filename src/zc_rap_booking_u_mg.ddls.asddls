@@ -1,6 +1,7 @@
 @EndUserText.label: 'Booking data'
 @AccessControl.authorizationCheck: #CHECK
 @Search.searchable: true
+@Metadata.allowExtensions: true
 define view entity ZC_RAP_BOOKING_U_MG
   as projection on ZI_RAP_BOOKING_U_MG
 {
@@ -10,10 +11,12 @@ define view entity ZC_RAP_BOOKING_U_MG
       @Search.defaultSearchElement: true
   key BookingID,
       BookingDate,
+       @Consumption.valueHelpDefinition: [ { entity: { name:    '/DMO/I_Customer', 
+                                                     element: 'CustomerID' } } ]
 
-      @Consumption.valueHelpDefinition: [ {entity:{ name: '/DMO/I_Customer',
-                                                     element: ' CustomerID ' } } ]
+      
       CustomerID,
+      
       @Consumption.valueHelpDefinition: [ { entity: { name:     '/DMO/I_Carrier',
                                                 element:     'AirlineID' } } ]
       CarrierID,
